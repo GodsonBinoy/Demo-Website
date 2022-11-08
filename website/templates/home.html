@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        {% for i in booklist %}
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+                <img src="{{i.img.url}}" class="card-img-top" alt=""  height="400">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <a href="{% url 'webapp:detail' i.id %}" class="btn btn-primary">Click for more</a>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

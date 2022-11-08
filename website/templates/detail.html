@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 style="color:DodgerBlue;">{{book.name}}</h1><br>
+<img src="{{book.img.url}}"><br>
+<br>
+{{book.description}}<br>
+<br>
+<h3>Author : {{book.author}}</h3><br>
+<br>
+<a class="btn btn-warning" href="{% url 'webapp:update' book.id %}">Update</a>
+<a class="btn btn-danger" href="{% url 'webapp:delete' book.id %}">Delete</a>
+
+{% endblock %}
